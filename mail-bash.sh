@@ -1,6 +1,6 @@
 #!/bin/bash
 
-username="jakubb.mackowiak@gmail.com"  # from this email script is reading bash commands
+username="example@gmail.com"  # from this GMAIL script is reading bash commands
 password=""
 
 mail=$(curl -u $username:$password --silent "https://mail.google.com/mail/feed/atom" | grep -oPm1 "(?<=<title>)[^</]+" | sed '1d' | head -1)
@@ -22,7 +22,7 @@ if [ "${commands[0]}" = "####" ]; then
   if [ "$last" != "$new" ]; then
     echo "${commands[@]}" > last_skrypt.txt
     x=$("${commands[@]}") #to basha
-    echo "$x" | sendmail -t mocnysm2@gmail.com  # response to this email
+    echo "$x" | sendmail -t send_response@gmail.com  # response to this email
   fi
 fi
 
