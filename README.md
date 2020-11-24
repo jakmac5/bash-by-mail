@@ -1,2 +1,3 @@
 # bash-by-mail
- bash script to use bash commands by sending email
+
+    Send email with bash commands to execute it in linux machine.
